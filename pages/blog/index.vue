@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1>Blog</h1>
-      <p> エンジニアの日常生活をお届けします</p>
+      <p> エンジニアの日常生活をお届けします。</p>
       <div v-for="singleData in data" :key="singleData.id">
         <div>
           <h3>
@@ -23,7 +23,7 @@
 
 <script setup>
 const { data } = await useAsyncData("blogQuery", () =>
-  queryContent("/blog").find()
+  queryContent("/blog").sort({ id: -1 }).find()
 )
 </script>
 
